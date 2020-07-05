@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var multer = require('multer');
 var upload = multer({dest: 'uploads/'});
-var moment = require('moment');
 var expressValidator = require('express-validator');
 
 var mongo = require('mongodb');
@@ -18,6 +17,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+app.locals.moment = require('moment');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
