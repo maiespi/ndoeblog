@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  if posts
+    each post, i in posts
+      .post
+        h1
+          a(href='/posts/show/#{post._id}')
+            =post.title
